@@ -10,16 +10,16 @@ import mockCmdFn from '../fns/command-mock'
 import { getMenuInstance } from '../fns/menus'
 
 let editor: Editor
-let boldMenu: Italic
+let italicMenu: Italic
 
-test('加粗', () => {
+test('斜线', () => {
     editor = createEditor(document, 'div1') // 赋值给全局变量
 
     // 找到 Italic 菜单
-    boldMenu = getMenuInstance(editor, Italic) as Italic
+    italicMenu = getMenuInstance(editor, Italic) as Italic
 
-    // 执行点击事件，模拟加粗
+    // 执行点击事件，模拟斜线
     mockCmdFn(document)
-    ;(boldMenu as Italic).clickHandler()
+    ;(italicMenu as Italic).clickHandler()
     expect(document.execCommand).toBeCalledWith('italic', false, undefined) // mock fn 被调用
 })
