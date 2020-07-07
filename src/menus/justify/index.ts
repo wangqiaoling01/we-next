@@ -15,22 +15,23 @@ class Justify extends DropListMenu implements MenuActive {
             width: 100,
             title: '对齐方式',
             type: 'list', // droplist 以列表形式展示
+            //  对于icon位置使用相对定位微调
             list: [
                 {
                     $elem: $(
-                        '<span><i class="w-e-icon-paragraph-left" style="color:#999"></i>靠左</span>'
+                        '<span><i class="w-e-icon-paragraph-left" style="padding-right: 7px ;top: 1px;position: relative;"></i>靠左</span>'
                     ),
                     value: 'justifyLeft',
                 },
                 {
                     $elem: $(
-                        '<span><i class="w-e-icon-paragraph-center" style="color:#999"></i>居中</span>'
+                        '<span><i class="w-e-icon-paragraph-center" style="padding-right: 7px ;top: 1.2px;position: relative;"></i>居中</span>'
                     ),
                     value: 'justifyCenter',
                 },
                 {
                     $elem: $(
-                        '<span><i class="w-e-icon-paragraph-right" style="color:#999"></i>靠右</span>'
+                        '<span><i class="w-e-icon-paragraph-right" style="padding-right: 7px ;top: 1.2px;position: relative;"></i>靠右</span>'
                     ),
                     value: 'justifyRight',
                 },
@@ -58,7 +59,7 @@ class Justify extends DropListMenu implements MenuActive {
     /**
      * 尝试改变菜单激活（高亮）状态
      * 默认左对齐,若选择其他对其方式对active进行高亮否则unActive
-     * ?考虑优化的话 是否可以对具体选中的进行高亮
+     * todo考虑优化的话 是否可以对具体选中的进行高亮
      */
     public tryChangeActive() {
         // const editor = this.editor

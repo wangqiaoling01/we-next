@@ -60,16 +60,15 @@ function _bindFocusAndBlur(editor: Editor): void {
     $(document).on('click', (e: Event) => {
         const target = e.target
         const $target = $(target)
+        // 元素的className
+        const isOwnerClass = $target.elems.values().next().value.className || ''
         const $textElem = editor.$textElem
         const $toolbarElem = editor.$toolbarElem
-
         //判断当前点击元素是否在编辑器内
         const isChild = $textElem.isContain($target)
-
         //判断当前点击元素是否为工具栏
         const isToolbar = $toolbarElem.isContain($target)
         const isMenu = $toolbarElem.elems[0] == e.target ? true : false
-
         if (!isChild) {
             // 若为选择工具栏中的功能，则不视为成 blur 操作
             if (isToolbar && !isMenu) {
@@ -85,6 +84,13 @@ function _bindFocusAndBlur(editor: Editor): void {
                 _focusHandler(editor)
             }
             editor.isFocus = true
+        }
+        // 点击的地方classname是否含有w-e-text-container
+        if (isOwnerClass.includes('w-e-text-container')) {
+            // 设置可编辑
+            $target.attr('contenteditable', 'true')
+            // 创建选区
+            editor.selection.createEmptyRange()
         }
     })
 }
