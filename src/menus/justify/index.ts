@@ -43,6 +43,7 @@ class Justify extends DropListMenu implements MenuActive {
         }
         super($elem, editor, dropListConf)
     }
+
     /**
      * 执行命令
      * @param value value
