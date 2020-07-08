@@ -58,8 +58,9 @@ class Justify extends DropListMenu implements MenuActive {
     }
 
     /**
-     * 尝试改变菜单激活（高亮）状态
+     * 尝试改变菜单激活状态
      * 默认左对齐,若选择其他对其方式对active进行高亮否则unActive
+     * ?考虑优化的话是否可以对具体选中的进行高亮
      */
     public tryChangeActive() {
         // const editor = this.editor
