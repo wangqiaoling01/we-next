@@ -14,6 +14,7 @@ export default function (editor: Editor): void {
 
     const config = editor.config
     const zIndex = config.zIndex
+    const height = config.height
 
     let $toolbarElem: DomElement
     let $textContainerElem: DomElement
@@ -63,6 +64,7 @@ export default function (editor: Editor): void {
     $toolbarElem.addClass('w-e-toolbar')
     $textContainerElem.addClass('w-e-text-container')
     $textContainerElem.css('z-index', `${zIndex}`)
+    $textContainerElem.css('height', `${height}px`)
     $textElem.addClass('w-e-text')
 
     // 添加 ID

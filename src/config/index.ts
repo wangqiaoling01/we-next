@@ -22,6 +22,7 @@ export type ConfigType = {
     fontSizes: FontSizeType
     colors: string[]
     zIndex: number
+    height: number
     onchange: Function
     onfocus: Function
     onblur: Function
