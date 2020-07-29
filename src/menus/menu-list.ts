@@ -17,6 +17,7 @@ import BackColor from './back-color/index'
 import FontColor from './font-color/index'
 import Video from './video/index'
 import Image from './img/index'
+import RowHeight from './rowheight/index'
 
 export default {
     bold: Bold,
@@ -33,4 +34,5 @@ export default {
     fontColor: FontColor,
     video: Video,
     image: Image,
+    rowHeight: RowHeight,
 }
